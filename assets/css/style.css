@@ -1,0 +1,60 @@
+/* :root define as variáveis para o tema claro (padrão) */
+:root {
+    --bs-body-bg: #f8f9fa; /* Fundo principal claro */
+    --bs-body-color: #212529; /* Texto principal escuro */
+    --bs-secondary-bg: #ffffff; /* Fundo secundário (cards, header) branco */
+    --bs-border-color: #dee2e6; /* Cor da borda */
+}
+
+/* Quando o atributo data-bs-theme="dark" está presente no HTML, essas variáveis são aplicadas */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #121212; /* Fundo principal escuro */
+    --bs-body-color: #e9ecef; /* Texto principal claro */
+    --bs-secondary-bg: #1e1e1e; /* Fundo secundário um pouco mais claro */
+    --bs-border-color: #495057; /* Cor da borda escura */
+}
+
+/* Adiciona uma transição suave para as mudanças de cor */
+body, .card, .bg-light, header, .btn, .nav-link, .social-icons a {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Usa as variáveis nos estilos existentes */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+   
+}
+
+header, .card, .rounded-3 {
+    background-color: var(--bs-secondary-bg) !important;
+}
+
+/* Efeito sutil de elevação nos cards de projeto ao passar o mouse */
+.card {
+    border-color: var(--bs-border-color);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; 
+}
+
+/* Estilização dos ícones sociais */
+.social-icons a {
+    color: var(--bs-body-color);
+    margin: 0 15px; 
+    font-size: 1.5rem; 
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #0d6efd; 
+}
+
+/* Estilo do botão de tema */
+#theme-toggle {
+    font-size: 1.2rem;
+}
