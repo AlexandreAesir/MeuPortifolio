@@ -31,15 +31,101 @@ header, .card, .rounded-3 {
     background-color: var(--bs-secondary-bg) !important;
 }
 
-/* Efeito sutil de elevação nos cards de projeto ao passar o mouse */
+/* Estilo específico para o card animado especial */
+.animated-card {
+  width: 250px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(58, 58, 58, 0.9), rgba(75, 75, 75, 0.9));
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.animated-card:hover {
+  border-radius: 20px;
+  cursor: pointer;
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(224, 224, 224, 0.9), rgba(75, 75, 75, 0.9));
+}
+
+/* Estilização das imagens dentro do card */
+.animated-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Primeira imagem - posição padrão (centro) */
+.first-content img {
+  object-position: center;
+}
+
+/* Segunda imagem - foco na parte direita */
+.second-content img {
+  object-position: right center;
+}
+
+.animated-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Efeito sutil de elevação nos cards de projeto normais */
 .card {
-    border-color: var(--bs-border-color);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; 
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.animated-card:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: rotate(90deg) scale(-1);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animated-card:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 1.8rem;
+  transform: rotate(0deg);
 }
 
 /* Estilização dos ícones sociais */
